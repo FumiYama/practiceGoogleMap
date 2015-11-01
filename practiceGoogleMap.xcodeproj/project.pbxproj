@@ -14,6 +14,7 @@
 		32BE25C51BCBB17B00937F08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BE25C31BCBB17B00937F08 /* LaunchScreen.storyboard */; };
 		32BE25D01BCBB17B00937F08 /* practiceGoogleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE25CF1BCBB17B00937F08 /* practiceGoogleMapTests.swift */; };
 		32BE25DB1BCBB17B00937F08 /* practiceGoogleMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE25DA1BCBB17B00937F08 /* practiceGoogleMapUITests.swift */; };
+		725E50BEC5C5414713D14AB4 /* libPods-practiceGoogleMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1C3EEC1C832B5FE31EB9A7 /* libPods-practiceGoogleMap.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		32BE25D61BCBB17B00937F08 /* practiceGoogleMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = practiceGoogleMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BE25DA1BCBB17B00937F08 /* practiceGoogleMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiceGoogleMapUITests.swift; sourceTree = "<group>"; };
 		32BE25DC1BCBB17B00937F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F1C3EEC1C832B5FE31EB9A7 /* libPods-practiceGoogleMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-practiceGoogleMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C3137F54AF839C8CA69457 /* Pods-practiceGoogleMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceGoogleMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-practiceGoogleMap/Pods-practiceGoogleMap.release.xcconfig"; sourceTree = "<group>"; };
+		DF0F542B0D1D88C3B4A6D223 /* Pods-practiceGoogleMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceGoogleMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-practiceGoogleMap/Pods-practiceGoogleMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725E50BEC5C5414713D14AB4 /* libPods-practiceGoogleMap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				32BE25CE1BCBB17B00937F08 /* practiceGoogleMapTests */,
 				32BE25D91BCBB17B00937F08 /* practiceGoogleMapUITests */,
 				32BE25B81BCBB17B00937F08 /* Products */,
+				B92F43512E72D2E2DF562258 /* Pods */,
+				41F43BB5ED7C11233D054DC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = practiceGoogleMapUITests;
 			sourceTree = "<group>";
 		};
+		41F43BB5ED7C11233D054DC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F1C3EEC1C832B5FE31EB9A7 /* libPods-practiceGoogleMap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B92F43512E72D2E2DF562258 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF0F542B0D1D88C3B4A6D223 /* Pods-practiceGoogleMap.debug.xcconfig */,
+				79C3137F54AF839C8CA69457 /* Pods-practiceGoogleMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32BE25DF1BCBB17B00937F08 /* Build configuration list for PBXNativeTarget "practiceGoogleMap" */;
 			buildPhases = (
+				459876EC25641ED0099C6637 /* Check Pods Manifest.lock */,
 				32BE25B31BCBB17B00937F08 /* Sources */,
 				32BE25B41BCBB17B00937F08 /* Frameworks */,
 				32BE25B51BCBB17B00937F08 /* Resources */,
+				7F301C3EBF88333DF5D091F7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +275,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		459876EC25641ED0099C6637 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F301C3EBF88333DF5D091F7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-practiceGoogleMap/Pods-practiceGoogleMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32BE25B31BCBB17B00937F08 /* Sources */ = {
@@ -394,8 +453,10 @@
 		};
 		32BE25E01BCBB17B00937F08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF0F542B0D1D88C3B4A6D223 /* Pods-practiceGoogleMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = practiceGoogleMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yamafumi.practiceGoogleMap;
@@ -405,8 +466,10 @@
 		};
 		32BE25E11BCBB17B00937F08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79C3137F54AF839C8CA69457 /* Pods-practiceGoogleMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = practiceGoogleMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yamafumi.practiceGoogleMap;
@@ -481,6 +544,7 @@
 				32BE25E11BCBB17B00937F08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32BE25E21BCBB17B00937F08 /* Build configuration list for PBXNativeTarget "practiceGoogleMapTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +553,7 @@
 				32BE25E41BCBB17B00937F08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32BE25E51BCBB17B00937F08 /* Build configuration list for PBXNativeTarget "practiceGoogleMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +562,7 @@
 				32BE25E71BCBB17B00937F08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
